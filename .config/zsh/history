@@ -1,0 +1,227 @@
+mkdir .config/zsh
+touch .config/zsh/history
+clear
+clear
+ls /home
+cd /home
+chsh -s /usr/bin/zsh
+nvim .zshrc
+echo $ZSH_VERSION
+echo -e "\xee\x82\xa0"
+yay -S fira-code
+echo $TERM
+clear
+clear
+clear
+clear
+yay -S spaceship-prompt
+nvim .zshrc
+this is a test
+clear
+nvim .zshrc
+clear
+cd ~/src/TFOS
+cd ~/src
+clear
+ls .config
+ls ~/.config
+nvim .config/spaceship.zsh
+clear
+nvim .config/spaceship.zsh
+fg
+clear
+clear
+clear
+ls
+nvim .config/spaceship.zsh
+clear
+clear
+ls
+clear
+nvim .config/spaceship.zsh
+nvim .config/spaceship.zsh
+nvim .config/spaceship.zsh
+clear
+clear
+time echo ""
+clear
+yay -S ttf-fira-cord
+yay -S ttf-fira-code
+nvim .Xdefaults
+nvim .Xdefaults
+lsfont
+fc-list
+fc-list | grep "fira"
+fc-list | grep "fir"
+fc-list | grep -i firA"
+fc-list | grep -i fira
+nvim .Xdefaults
+cd ~/src
+yay -R urxvt
+nvim .zshrc
+clear
+cd ~/src
+clear
+git clone https://github.com/exg/rxvt-unicode
+clear
+git clone https://github.com/exg/rxvt-unicode
+cd rxvt-unicode
+clear
+ls
+./configure --help
+CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto" ./configure --prefix=/usr --disable-assert --enable-256-color --disable-unicode3 --disable-combining --enable-xft --enable-font-styles --disable-pixbuf --disable-startup-notification --enable-transparency --enable-fading --disable-rxvt-scroll --disable-next-scroll --disable-xterm-scroll --enable-perl --enable-xim --disable-iso14755 --disable-frills --enable-mousewheel --enable-smart-resize --enable-text-blink --enable-pointer-blank --with-x
+CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto" ./configure --prefix=/usr --disable-assert --enable-256-color --disable-unicode3 --disable-combining --enable-xft --enable-font-styles --disable-pixbuf --disable-startup-notification --enable-transparency --enable-fading --disable-rxvt-scroll --disable-next-scroll --disable-xterm-scroll --enable-perl --enable-xim --disable-iso14755 --disable-frills --enable-mousewheel --enable-smart-resize --enable-text-blink --enable-pointer-blank --with-x CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto"
+grep -r "-O3" .
+grep -r "\-O3" .
+rm config.log
+ls
+rm Makefile
+grep -r "\-O3" .
+rm config.status
+nvim configure.ac
+grep -r "\-O3" .
+./configure
+make distclean
+./configure
+make distclean
+grep -r "\-O3" .
+nvim configure
+CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto" ./configure --prefix=/usr --disable-assert --enable-256-color --disable-unicode3 --disable-combining --enable-xft --enable-font-styles --disable-pixbuf --disable-startup-notification --enable-transparency --enable-fading --disable-rxvt-scroll --disable-next-scroll --disable-xterm-scroll --enable-perl --enable-xim --disable-iso14755 --disable-frills --enable-mousewheel --enable-smart-resize --enable-text-blink --enable-pointer-blank --with-x CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto"
+perl
+yay -S perl-devel
+git diff
+nvim configure
+nvim configure
+yay -S perl-devel
+CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto" ./configure --prefix=/usr --disable-assert --enable-256-color --disable-unicode3 --disable-combining --enable-xft --enable-font-styles --disable-pixbuf --disable-startup-notification --enable-transparency --enable-fading --disable-rxvt-scroll --disable-next-scroll --disable-xterm-scroll --enable-perl --enable-xim --disable-iso14755 --disable-frills --enable-mousewheel --enable-smart-resize --enable-text-blink --enable-pointer-blank --with-x CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto"
+make distclean
+nvim configure
+CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto" ./configure --prefix=/usr --disable-assert --enable-256-color --disable-unicode3 --disable-combining --enable-xft --enable-font-styles --disable-pixbuf --disable-startup-notification --enable-transparency --enable-fading --disable-rxvt-scroll --disable-next-scroll --disable-xterm-scroll --enable-perl --enable-xim --disable-iso14755 --disable-frills --enable-mousewheel --enable-smart-resize --enable-text-blink --enable-pointer-blank --with-x CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto"
+cat Makefile | grep "lto"
+cat Makefile
+cat src/Makefile
+make
+ls
+cd src
+ls
+cd ..
+ls
+yay -S libev
+yay -S libev-devel
+yay -S libev-dev
+mkdir libev
+cp /usr/include/ev++.h /usr/include/ev.h libev
+cat src/Makefile
+make
+make clean
+rm -r libev
+tar tf ~/Downloads/libev-4.33.tar.gz
+tar xf ~/Downloads/libev-4.33.tar.gz
+ls
+mv libev-4.33 libev
+clear
+git status
+cat ~/.config/spaceship.zsh
+echo $?
+return 1
+ls
+make
+sudo make install
+clear
+cat ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+cd ~/src/rxvt-unicode
+patch ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+patch -np1 ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+git patch ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+git apply-patch ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+git apply ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+make
+make distclean
+cat ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+nvim ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+nvim ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+git apply ~/Downloads/0001-Revert-rxvt-unicode-screen.C-to-rxvt-unicode-9.30-st.patch
+make
+CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto" ./configure --prefix=/usr --disable-assert --enable-256-color --disable-unicode3 --disable-combining --enable-xft --enable-font-styles --disable-pixbuf --disable-startup-notification --enable-transparency --enable-fading --disable-rxvt-scroll --disable-next-scroll --disable-xterm-scroll --enable-perl --enable-xim --disable-iso14755 --disable-frills --enable-mousewheel --enable-smart-resize --enable-text-blink --enable-pointer-blank --with-x CFLAGS="-Ofast -march=native -mtune=native" LDFLAGS="-flto"
+make
+make -j4
+sudo make install
+systemctl suspend
+yay -S xboxdrv
+sudo nvim /etc/makepkg.conf 
+yay -S xboxdrv
+sudo xboxdrv -R --detatch-kernel-module
+sudo xboxdrv -R
+sudo xboxdrv -R --detach-kernel-driver
+ssh 192.168.0.3
+cd ~/src
+ls
+cd rxvt-unicode
+history | grep "configure"
+nvim configureCmd
+cd ..
+ls
+mkdir TechflashDotFiles
+cd TechflashDotFiles
+ln -s ~/.zshrc .zshrc
+ls -a
+cat .zshrc
+clear
+ln -s ~/.Xdefaults .Xdefaults
+rm ~/.bash*
+ls -A ~
+rm ~/switchroot-ubuntu-5.1.0-2023-04-22.7z ~/windows_vista_201911_archive.torrent ~/.zshrc.zni
+ln -s ~/.xinitrc .xinitrc
+file ~/test
+rm ~/test
+ls -A ~
+cat ~/.zcompdump
+nvim .zshrc
+nvim .zshrc
+ls ~/.oh
+ls ~/.oh*
+nvim .zshrc
+rm .zcompdump
+mkdir .cache/zsh
+ls
+ls -A
+rm .zcompdump
+rm .zcompdump
+rm .zcompdump
+nvim .zshrc
+rm .zcompdump
+ls
+ls -A
+ls -A | wc -l
+ls log
+rm -r log
+clear
+ls
+ls Desktop
+rm -r Des
+rm -r Desktop
+clear
+ls -A
+exec startx
+cd ~/src/
+ls
+cd TechflashDotFiles
+cd ..
+mv TechflashDotFiles dotfiles
+clear
+cd dotfiles
+clear
+ls
+ls -A
+nvim .zshrc
+ls
+echo $LS_COLORS
+nvim .zshrc
+yay -S dash
+yay -S dashbinsh
+sh
+clear
+ls -l /bin/sh
+yay -S xdg-open
+xdg-open
+yay -S xdg-utils
