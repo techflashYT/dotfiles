@@ -1,18 +1,20 @@
 #!/bin/bash
-mkdir -p backups
-source /etc/os-release
+mkdir -p backups/.config
 
+trap exit INT
 red="\x1b[31m"
+green="\x1b[1;32m"
 yellow="\x1b[1;33m"
 reset="\x1b[0m"
 installPkgs=true
-if [[ "$NAME" != "*Arch Linux*" ]]; then
+grep "Arch Linux" /etc/os-release &> /dev/null
+if [ $? != 0 ]; then
 	echo -e "${red}This script has limited functionality outside of Arch Linux!$reset" >&2
 	installPkgs=false
 fi
 # define wrapper function
 install() {
-	if [ -f ~/$1 ]; then
+	if [ -f ~/$1 ] || [ -d ~/$1 ]; then
 		echo -e "${yellow}Saving original file \"$1\" to \"$(pwd)/backups/$1\"$reset" >&2
 		mv ~/$1 $(pwd)/backups/$1
 	fi
@@ -25,7 +27,9 @@ install() {
 		echo "done"
 	fi
 }
+
 # symlink the configs into place
+echo "Installing dotfiles..."
 install .Xdefaults
 install .xinitrc
 install .zshrc
@@ -33,3 +37,33 @@ install .config/i3
 install .config/i3status
 install .config/spaceship.zsh
 install .config/xorg
+
+cmd=none
+installPkgs() {
+	echo -n "Installing packages... "
+	if ! $installPkgs; then
+		echo -e "${red}not supported!$reset"
+		return
+	fi
+	echo -e "${green}supported!$reset"
+
+	command -v yay &> /dev/null
+	if [ $? != 0 ]; then
+		echo -e "${red}yay not installed!$reset  Press enter to install it, or CTRL-C to abort"
+		read -n 1 k
+		su -c "pacman -S --needed git make gcc binutils fakeroot"
+		git clone https://aur.archlinux.org/yay
+		cd yay
+		makepkg -si
+		echo -e "${green}yay installed!$reset"
+	fi
+	echo "Updating repos first..."
+
+	yay -Sy
+	echo "Done, installing packages"
+	yay -S --needed i3-wm i3status xorg-server rxvt-unicode zsh spaceship-prompt ttf-dejavu ttf-fira-code
+}
+
+installPkgs
+echo "Done!  Enjoy!"
+
