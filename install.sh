@@ -61,7 +61,7 @@ installPkgs() {
 
 	yay -Sy
 	echo "Done, installing packages"
-	yay -S --needed i3-wm i3status xorg-server rxvt-unicode zsh spaceship-prompt ttf-dejavu ttf-fira-code
+	yay -S --needed i3-wm i3status xorg-server rxvt-unicode zsh spaceship-prompt ttf-dejavu ttf-fira-code rofi
 }
 
 installPkgs
