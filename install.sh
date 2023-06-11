@@ -41,6 +41,7 @@ install .config/i3
 install .config/i3status
 install .config/spaceship.zsh
 install .config/xorg
+install .config/rofi
 
 cmd=none
 installPkgs() {
