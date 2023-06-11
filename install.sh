@@ -14,7 +14,8 @@ if [ $? != 0 ]; then
 fi
 # define wrapper function
 install() {
-	if [ -f ~/$1 ] || [ -d ~/$1 ]; then
+	ls ~/$1 &> /dev/null
+	if [ $? = 0 ]; then
 		echo -e "${yellow}Saving original file \"$1\" to \"$(pwd)/backups/$1\"$reset" >&2
 		mv ~/$1 $(pwd)/backups/$1
 	fi
