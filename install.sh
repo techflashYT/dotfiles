@@ -33,6 +33,10 @@ echo "Installing dotfiles..."
 install .Xdefaults
 install .xinitrc
 install .zshrc
+if ! [ -d ~/.config ]; then
+	echo -e "${yellow}WARNING: Creating \`.config' directory since it doesn't exist.${reset}"
+	mkdir ~/.config
+fi
 install .config/i3
 install .config/i3status
 install .config/spaceship.zsh
