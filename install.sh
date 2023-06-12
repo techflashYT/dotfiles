@@ -70,7 +70,7 @@ installPkgs() {
 	echo "Done, installing packages"
 	yay -S --needed i3-wm i3status rofi \
 		rxvt-unicode ttf-dejavu ttf-fira-code \
-		zsh spaceship-prompt \
+		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
 		libconfig \
 		dunst compton-old-git feh
