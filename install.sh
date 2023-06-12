@@ -23,10 +23,10 @@ install() {
 	echo -n "Installing: \"$1\"... "
 	ln -s $(pwd)/$1 ~/$1
 	if [ $? != 0 ]; then
-		echo "error"
+		echo -e "${red}error$reset"
 		echo "Error installing dotfile \"$1\", continuing..." >&2
 	else
-		echo "done"
+		echo -e "${green}done$reset"
 	fi
 }
 
@@ -47,6 +47,22 @@ install .config/xorg
 install .config/rofi
 install .config/zsh
 
+echo -n "Installing: \"firefoxUser.js\"... "
+dir=$(pwd)
+cd ~/.mozilla/firefox/*default-release/
+ls user.js &> /dev/null
+if [ $? = 0 ]; then
+	echo -e "${yellow}Saving original file \"user.js\" to \"$dir/backups/user.js\"$reset" >&2
+	rm -f $dir/backups/user.js
+	mv user.js $dir/backups/user.js
+fi
+ln -s $dir/firefoxUser.js user.js
+if [ $? != 0 ]; then
+	echo -e "${red}error$reset"
+	echo "Error installing \"user.js\", continuing..." >&2
+else
+	echo -e "${green}done$reset"
+fi
 cmd=none
 installPkgs() {
 	echo -n "Installing packages... "
@@ -79,6 +95,6 @@ installPkgs() {
 
 }
 
-installPkgs
+#installPkgs
 echo "Done!  Enjoy!"
 
