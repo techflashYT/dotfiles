@@ -22,8 +22,8 @@ compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.config/zsh/history
-HISTSIZE=1000000
-SAVEHIST=10000000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt autocd beep extendedglob nomatch notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -37,3 +37,5 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

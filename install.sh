@@ -71,7 +71,9 @@ installPkgs() {
 	yay -S --needed i3-wm i3status rofi \
 		rxvt-unicode ttf-dejavu ttf-fira-code \
 		zsh spaceship-prompt \
-		xorg-server xorg-xinit
+		xorg-server xorg-xinit libxcomposite \
+		libconfig \
+		dunst compton-old-git feh
 
 }
 
