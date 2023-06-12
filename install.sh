@@ -17,7 +17,8 @@ install() {
 	ls ~/$1 &> /dev/null
 	if [ $? = 0 ]; then
 		echo -e "${yellow}Saving original file \"$1\" to \"$(pwd)/backups/$1\"$reset" >&2
-		mv ~/$1 $(pwd)/backups/$1
+		rm -f backups/$1
+		mv ~/$1 backups/$1
 	fi
 	echo -n "Installing: \"$1\"... "
 	ln -s $(pwd)/$1 ~/$1
@@ -34,6 +35,7 @@ echo "Installing dotfiles..."
 install .Xdefaults
 install .xinitrc
 install .zshrc
+install .gitconfig
 if ! [ -d ~/.config ]; then
 	echo -e "${yellow}WARNING: Creating \`.config' directory since it doesn't exist.${reset}"
 	mkdir ~/.config
