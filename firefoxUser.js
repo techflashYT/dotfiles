@@ -161,3 +161,24 @@ user_pref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
 
 // send do not track
 user_pref("privacy.donottrackheader.enabled", true);
+
+// set initial paint delay
+user_pref("nglayout.initialpaint.delay", 0); // default=5; used to be 250
+user_pref("nglayout.initialpaint.delay_in_oopif", 0); // default=5
+
+// GPU acceleration
+user_pref("gfx.canvas.accelerated", true); // DEFAULT macOS LINUX [FF110]; not compatible with WINDOWS integrated GPUs
+user_pref("gfx.canvas.accelerated.cache-items", 4096); // default=2048; alt=8192
+user_pref("gfx.canvas.accelerated.cache-size", 512); // default=256; alt=1024
+user_pref("gfx.content.skia-font-cache-size", 20); // default=5; Chrome=20
+
+// network buffer things to reduce CPU usage
+user_pref("network.buffer.cache.size", 262144); // 256 kb; default=32768 (32 kb)
+user_pref("network.buffer.cache.count", 128); // default=24
+
+// set max HTTP connections
+user_pref("network.http.max-connections", 1800); // default=900
+user_pref("network.http.max-persistent-connections-per-server", 10); // default=6; download connections; anything above 10 is excessive
+user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
+
+user_pref("network.ssl_tokens_cache_capacity", 10240); // default=2048; more TLS token caching (fast reconnects)
