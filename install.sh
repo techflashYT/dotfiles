@@ -95,6 +95,6 @@ installPkgs() {
 
 }
 
-#installPkgs
+installPkgs
 echo "Done!  Enjoy!"
 
