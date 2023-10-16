@@ -91,7 +91,7 @@ installPkgs() {
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
 		libconfig \
-		dunst compton-old-git feh
+		notification-daemon compton-old-git feh
 
 }
 

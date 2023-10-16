@@ -8,6 +8,7 @@ fi
 
 
 feh /usr/share/backgrounds/arch.png --bg-scale --no-fehbg &
-dunst &
-compton &
+/usr/lib/notification-daemon-1.0/notification-daemon &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#compton &
 exec i3
