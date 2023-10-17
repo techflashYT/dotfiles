@@ -91,7 +91,7 @@ installPkgs() {
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
 		libconfig \
-		notification-daemon compton-old-git feh
+		notification-daemon picom feh
 
 }
 

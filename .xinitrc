@@ -10,5 +10,5 @@ fi
 feh /usr/share/backgrounds/arch.png --bg-scale --no-fehbg &
 /usr/lib/notification-daemon-1.0/notification-daemon &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#compton &
+picom --no-fading-openclose -i 0.75 --vsync --fade-out-step 1 --fade-in-step 1
 exec i3
