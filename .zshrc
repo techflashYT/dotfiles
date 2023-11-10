@@ -3,7 +3,7 @@ alias ls='ls --color=auto'
 export DISTCC_DIR=/tmp/distcc
 export LESSHISTFILE="-"
 source /etc/profile.d/devkit-env.sh
-export PATH="$PATH:/opt/TechflashSoftware/crossCompiler/bin:/opt/android-sdk/platform-tools:/opt/devkitpro/devkitPPC/bin"
+export PATH="$PATH:/opt/TechflashSoftware/crossCompiler/bin:/opt/android-sdk/platform-tools:/opt/devkitpro/devkitPPC/bin:/home/techflash/bin/"
 
 export GTK_THEME=Arc-Dark:dark
 
@@ -42,6 +42,9 @@ bindkey "^[[8~"   end-of-line
 bindkey "^[[3~"   delete-char
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
+bindkey "^?"      backward-delete-word
+bindkey "^H"      backward-delete-char
+bindkey "^[[3;5~" delete-word
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
