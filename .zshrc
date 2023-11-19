@@ -50,6 +50,28 @@ source /usr/lib/spaceship-prompt/spaceship.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /home/techflash/src/mtocptwm/src/gui/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/techflash/src/mtocptwm/src/gui/node_modules/tabtab/.completions/electron-forge.zsh
+# Set the initial terminal height
+TERM_HEIGHT=$(tput lines)
+
+# Function to move the cursor to the bottom of the screen
+move_cursor_to_bottom() {
+    tput cup $TERM_HEIGHT 0
+}
+# Function to update the terminal height
+update_terminal_height() {
+    TERM_HEIGHT=$(tput lines)
+}
+
+# Function to be executed before each prompt
+precmd() {
+    move_cursor_to_bottom
+}
+
+# Function to be executed before each command
+preexec() {
+    update_terminal_height
+    move_cursor_to_bottom
+}
+                                                                                                                                                    
+# Initial call to set up the terminal height
+update_terminal_height
