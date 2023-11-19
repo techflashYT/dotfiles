@@ -42,8 +42,12 @@ bindkey "^[[8~"   end-of-line
 bindkey "^[[3~"   delete-char
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
-bindkey "^?"      backward-delete-word
-bindkey "^H"      backward-delete-char
+
+if ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$) | grep gnome; then
+	echo gnome terminal detected
+	bindkey "^?"      backward-delete-word
+	bindkey "^H"      backward-delete-char
+fi
 bindkey "^[[3;5~" delete-word
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
