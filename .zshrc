@@ -43,11 +43,19 @@ bindkey "^[[3~"   delete-char
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
-if ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$) | grep gnome; then
-	echo gnome terminal detected
+
+TERM_PROC=$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))
+if echo $TERM_PROC | grep 'cool-retro-term' > /dev/null; then
 	bindkey "^?"      backward-delete-word
 	bindkey "^H"      backward-delete-char
 fi
+if echo $TERM_PROC | grep 'gnome' > /dev/null; then
+	bindkey "^H"      backward-delete-word
+	bindkey "^?"      backward-delete-char
+fi
+
+
+
 bindkey "^[[3;5~" delete-word
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
