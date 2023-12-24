@@ -90,3 +90,11 @@ preexec() {
                                                                                                                                                     
 # Initial call to set up the terminal height
 update_terminal_height
+
+if [ $(tty) = "/dev/tty1" ]; then
+	exec startx
+fi
+
+if [ "$PLAY_MUSIC" = "1" ]; then
+	music
+fi
