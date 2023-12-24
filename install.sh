@@ -7,26 +7,33 @@ green="\x1b[1;32m"
 yellow="\x1b[1;33m"
 reset="\x1b[0m"
 installPkgs=true
-grep "Arch Linux" /etc/os-release &> /dev/null
-if [ $? != 0 ]; then
+
+asRoot() {
+	if command -v sudo &> /dev/null; then
+		sudo "$1"
+	else
+		su -c "$1"
+	fi
+}
+
+if ! grep "Arch Linux" /etc/os-release &> /dev/null; then
 	echo -e "${red}This script has limited functionality outside of Arch Linux!$reset" >&2
 	installPkgs=false
 fi
 # define wrapper function
 install() {
-	ls ~/$1 &> /dev/null
-	if [ $? = 0 ]; then
+	if ls ~/"$1" &> /dev/null; then
 		echo -e "${yellow}Saving original file \"$1\" to \"$(pwd)/backups/$1\"$reset" >&2
-		rm -f backups/$1
-		mv ~/$1 backups/$1
+		rm -f backups/"$1"
+		mv ~/"$1" backups/"$1"
 	fi
 	echo -n "Installing: \"$1\"... "
-	ln -s $(pwd)/$1 ~/$1
-	if [ $? != 0 ]; then
+
+	if ln -s "$PWD/$1" "$HOME/$1"; then
+		echo -e "${green}done$reset"
+	else
 		echo -e "${red}error$reset"
 		echo "Error installing dotfile \"$1\", continuing..." >&2
-	else
-		echo -e "${green}done$reset"
 	fi
 }
 
@@ -48,22 +55,37 @@ install .config/rofi
 install .config/zsh
 
 echo -n "Installing: \"firefoxUser.js\"... "
-dir=$(pwd)
+dir=$PWD
 cd ~/.mozilla/firefox/*default-release/
 ls user.js &> /dev/null
 if [ $? = 0 ]; then
 	echo -e "${yellow}Saving original file \"user.js\" to \"$dir/backups/user.js\"$reset" >&2
-	rm -f $dir/backups/user.js
-	mv user.js $dir/backups/user.js
+	rm -f "$dir/backups/user.js"
+	mv user.js "$dir/backups/user.js"
 fi
-ln -s $dir/firefoxUser.js user.js
-if [ $? != 0 ]; then
+if ! ln -s "$dir/firefoxUser.js" user.js; then
 	echo -e "${red}error$reset"
 	echo "Error installing \"user.js\", continuing..." >&2
 else
 	echo -e "${green}done$reset"
 fi
-cmd=none
+
+
+installYay() {
+	if ! command -v yay &> /dev/null; then
+		echo -e "${red}yay not installed!$reset  Installing now."
+
+		asRoot "pacman -S --needed git make gcc binutils fakeroot"
+		git clone https://aur.archlinux.org/yay
+		if cd yay; then
+			echo -e "${red}Failed to cd into the yay directory... did git fail?$reset"
+			return 1
+		fi
+		makepkg -sir --noconfirm --needed
+		echo -e "${green}yay installed!$reset"
+	fi
+}
+
 installPkgs() {
 	echo -n "Installing packages... "
 	if ! $installPkgs; then
@@ -72,26 +94,17 @@ installPkgs() {
 	fi
 	echo -e "${green}supported!$reset"
 
-	command -v yay &> /dev/null
-	if [ $? != 0 ]; then
-		echo -e "${red}yay not installed!$reset  Press enter to install it, or CTRL-C to abort"
-		read -n 1 k
-		su -c "pacman -S --needed git make gcc binutils fakeroot"
-		git clone https://aur.archlinux.org/yay
-		cd yay
-		makepkg -si
-		echo -e "${green}yay installed!$reset"
-	fi
+	installYay
+
 	echo "Updating repos first..."
 
 	yay -Sy
 	echo "Done, installing packages"
 	yay -S --needed i3-wm i3status rofi \
-		rxvt-unicode ttf-dejavu ttf-fira-code \
+		gnome-terminal-transparency ttf-dejavu-nerd ttf-fira-code \
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
-		libconfig \
-		notification-daemon picom feh
+		notification-daemon polkit-gnome picom feh dex
 
 }
 
