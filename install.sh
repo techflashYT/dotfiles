@@ -57,6 +57,8 @@ install .config/gtk-2.0
 install .config/gtk-3.0
 install .config/gtk-4.0
 
+dconf load /org/gnome/terminal/ < gnome_terminal_settings.txt
+
 echo -n "Installing: \"firefoxUser.js\"... "
 dir=$PWD
 cd ~/.mozilla/firefox/*default-release/
