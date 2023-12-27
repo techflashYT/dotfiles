@@ -53,6 +53,9 @@ install .config/spaceship.zsh
 install .config/xorg
 install .config/rofi
 install .config/zsh
+install .config/gtk-2.0
+install .config/gtk-3.0
+install .config/gtk-4.0
 
 echo -n "Installing: \"firefoxUser.js\"... "
 dir=$PWD
