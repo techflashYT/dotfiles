@@ -77,7 +77,7 @@ installYay() {
 
 		asRoot "pacman -S --needed git make gcc binutils fakeroot"
 		git clone https://aur.archlinux.org/yay
-		if cd yay; then
+		if ! cd yay; then
 			echo -e "${red}Failed to cd into the yay directory... did git fail?$reset"
 			return 1
 		fi
