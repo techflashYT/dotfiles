@@ -10,7 +10,7 @@ installPkgs=true
 
 asRoot() {
 	if command -v sudo &> /dev/null; then
-		sudo "$1"
+		sudo $1
 	else
 		su -c "$1"
 	fi
