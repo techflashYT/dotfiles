@@ -104,7 +104,7 @@ installPkgs() {
 		gnome-terminal-transparency ttf-dejavu-nerd ttf-fira-code \
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
-		notification-daemon polkit-gnome picom feh dex
+		notification-daemon polkit-gnome picom feh
 
 }
 
