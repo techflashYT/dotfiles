@@ -100,7 +100,8 @@ bindsym $mod+Shift+0 exec --no-startup-id ~/bin/ws_move 10
 
 
 # assign common windows to specific workspaces
-assign [class="firefox-nightly|firefox|Firefox"] "1"
+assign [class="firefox-nightly"] "1"
+assign [class="firefox"] "1"
 assign [class="discord"] "2"
 assign [window_role="music_terminal"] "8"
 
