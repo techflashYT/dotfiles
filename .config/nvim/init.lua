@@ -16,10 +16,16 @@ require("nvim-tree").setup()
 --local languages = 
 --languages.bash = { shellcheck }
 
+local languages = require('efmls-configs.defaults').languages()
+languages = vim.tbl_extend('force', languages, {
+	sh = {
+		require('efmls-configs.linters.shellcheck')
+	},
+})
 require "lspconfig".efm.setup({
-    init_options = {documentFormatting = true},
-    settings = {
-        rootMarkers = {".git/"},
-	languages = require('efmls-configs.defaults').languages()
-    }
+	init_options = {documentFormatting = true},
+	settings = {
+		rootMarkers = {".git/"},
+		languages = languages
+	}
 })
