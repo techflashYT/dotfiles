@@ -3,7 +3,7 @@ alias ls='ls --color=auto'
 export DISTCC_DIR=/tmp/distcc
 export LESSHISTFILE="-"
 source /etc/profile.d/devkit-env.sh
-export PATH="$PATH:/opt/TechflashSoftware/crossCompiler/bin:/opt/android-sdk/platform-tools:/opt/devkitpro/devkitPPC/bin:/home/techflash/bin/:/home/techflash/x-tools/arm-unknown-linux-gnueabi/bin"
+export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:$HOME/bin/:$HOME/x-tools/arm-unknown-linux-gnueabi/bin"
 export GTK_THEME=Arc-Dark:dark
 
 setopt HIST_IGNORE_SPACE

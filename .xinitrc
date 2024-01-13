@@ -33,4 +33,5 @@ feh /usr/share/backgrounds/nixlabs.png --bg-scale --no-fehbg &
 picom --no-fading-openclose -i 0.75 --vsync --fade-out-step 1 --fade-in-step 1 &
 
 discord-canary &
+firefox &
 exec i3
