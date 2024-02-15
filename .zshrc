@@ -100,3 +100,6 @@ fi
 if [ "$PLAY_MUSIC" = "1" ]; then
 	music
 fi
+
+eval "$(zoxide init zsh)"
+alias cd=z
