@@ -3,7 +3,7 @@ alias ls='ls --color=auto'
 export DISTCC_DIR=/tmp/distcc
 export LESSHISTFILE="-"
 source /etc/profile.d/devkit-env.sh
-export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:$HOME/bin/:$HOME/x-tools/arm-unknown-linux-gnueabi/bin"
+export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:$HOME/bin/:$HOME/x-tools/arm-unknown-linux-gnueabi/bin:$HOME/.local/bin"
 export GTK_THEME=Arc-Dark:dark
 
 setopt HIST_IGNORE_SPACE
@@ -47,6 +47,7 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[5;5~" beep
 bindkey "^[[6;5~" beep
+bindkey "^[[3;5~" delete-word
 
 
 TERM_PROC=$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))
@@ -61,7 +62,6 @@ fi
 
 
 
-bindkey "^[[3;5~" delete-word
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -103,3 +103,7 @@ fi
 
 eval "$(zoxide init zsh)"
 alias cd=z
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/techflash/src/mtocptwm/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/techflash/src/mtocptwm/node_modules/tabtab/.completions/electron-forge.zsh
