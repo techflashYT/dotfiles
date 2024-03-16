@@ -32,6 +32,6 @@ feh /usr/share/backgrounds/nixlabs.png --bg-scale --no-fehbg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom --no-fading-openclose -i 0.75 --vsync --fade-out-step 1 --fade-in-step 1 &
 
-discord-canary &
+discord &
 firefox &
 exec i3
