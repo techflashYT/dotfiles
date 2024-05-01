@@ -50,8 +50,9 @@ bindsym $mod+Shift+space floating toggle
 
 # set first and second monitor variables
 set $fm HDMI-A-0
-set $sm DisplayPort-2workspace 1  output $fm
+set $sm DisplayPort-2
 
+workspace 1  output $fm
 workspace 2  output $fm
 workspace 3  output $fm
 workspace 4  output $fm
