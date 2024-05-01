@@ -52,15 +52,15 @@ bindkey "^[[3;5~" delete-word
 
 TERM_PROC=$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))
 if echo $TERM_PROC | grep 'cool-retro-term' > /dev/null; then
+	export TF_TERM_DISCOVERY="cool-retro-term"
 	bindkey "^?"      backward-delete-word
 	bindkey "^H"      backward-delete-char
 fi
 if echo $TERM_PROC | grep 'gnome' > /dev/null; then
+	export TF_TERM_DISCOVERY="gnome-terminal"
 	bindkey "^H"      backward-delete-word
 	bindkey "^?"      backward-delete-char
 fi
-
-
 
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
@@ -94,6 +94,7 @@ preexec() {
 update_terminal_height
 
 if [ $(tty) = "/dev/tty1" ]; then
+	sudo /usr/lib/corectrl/corectrl_helper &
 	exec startx
 fi
 
