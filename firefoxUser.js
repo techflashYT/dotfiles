@@ -135,10 +135,6 @@ user_pref("widget.non-native-theme.enabled", true); // [DEFAULT: true]
 user_pref("browser.link.open_newwindow", 3); // [DEFAULT: 3]
 user_pref("browser.link.open_newwindow.restriction", 0);
 
-// [!!!] Disable WebGL, this WILL break some stuff [!!!]
-user_pref("webgl.disabled", true);
-
-
 // a bunch of various things
 user_pref("extensions.blocklist.enabled", true); // [DEFAULT: true]
 // enforce no referer spoofing
