@@ -1,2 +1,4 @@
 backups
 yay
+# ignore the damn filepicker that updates every 5s
+gtkfilechooser.ini
