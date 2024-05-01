@@ -15,6 +15,20 @@ call plug#end()
 let g:onedark_config = {
     \ 'style': 'warm',
 \}
-colorscheme onedark
+if !empty($TF_TERM_DISCOVERY)
+	if $TF_TERM_DISCOVERY ==# 'gnome-terminal'
+		colorscheme onedark
+	elseif $TERM ==# 'cool-retro-term'
+		" Nothing, stock color scheme is better here.
+	endif
+else
+	" Fall back to $TERM based discovery
+	if $TERM ==# 'xterm-256color'   " Probably gnome-terminal
+		colorscheme onedark
+	elseif $TERM ==# 'xterm'        " Probably cool-retro-term, or something basic
+		" Do nothing for now
+	endif
+endif
+
 
 map <C-B> <Cmd>NvimTreeToggle<CR>
