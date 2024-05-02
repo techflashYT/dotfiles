@@ -7,6 +7,7 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
+	output_format = i3bar
         colors = true
         interval = 5
 }
@@ -17,6 +18,7 @@ order += "ethernet _first_"
 order += "disk /"
 order += "load"
 order += "cpu_usage"
+order += "cpu_temperature 0"
 order += "memory"
 order += "battery 0"
 order += "battery 1"
@@ -44,28 +46,32 @@ battery 0 {
 	status_bat = " "
 	status_chr = "⚡"
 	status_full = " "
+	status_empty = " "
 
 	integer_battery_capacity = true
 	last_full_capacity = true
 
 	low_threshold = 20
+	threshold_type = percentage
 	hide_seconds = true
 
-        format = "BAT0 - %status %percentage"
+        format = "BAT0 %status %percentage"
 	format_down = ""
 }
 battery 1 {
 	status_bat = " "
 	status_chr = "⚡"
 	status_full = " "
+	status_empty = " "
 
 	integer_battery_capacity = true
+	threshold_type = percent
 	last_full_capacity = true
 
 	low_threshold = 20
 	hide_seconds = true
 
-        format = "BAT1 - %status %percentage"
+        format = "BAT1 %status %percentage"
 	format_down = ""
 }
 
@@ -76,6 +82,13 @@ cpu_usage {
 	format_above_threshold = "CPU: %usage"
 	format_above_degraded_threshold = "CPU: %usage"
 }
+
+cpu_temperature 0 {
+	format = "Temp: %degrees °C"
+	max_threshold = 75
+	degraded_threshold = 60
+}
+
 memory {
         format = "Mem: %available free"
         threshold_degraded = "4G"
