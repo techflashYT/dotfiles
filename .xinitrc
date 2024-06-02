@@ -32,6 +32,9 @@ feh /usr/share/backgrounds/nixlabs.png --bg-scale --no-fehbg &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom --no-fading-openclose -i 1 --vsync --fade-out-step 1 --fade-in-step 1 &
 
+# shellcheck disable=SC2016,SC2088
+ntfy subscribe techflash_messages_aaabbbeeefff '~/bin/ntfy-notif "$t" "$m"' &
+
 discord &
 firefox &
 exec i3
