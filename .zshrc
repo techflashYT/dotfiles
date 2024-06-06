@@ -5,7 +5,7 @@ export LESSHISTFILE="-"
 source /etc/profile.d/devkit-env.sh
 export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:$HOME/bin/:$HOME/x-tools/arm-unknown-linux-gnueabi/bin:$HOME/.local/bin"
 export GTK_THEME=Arc-Dark:dark
-export GTK_ICON_THEME=Arc
+export GTK_ICON_THEME=Papirus-Dark
 export MOZ_USE_XINPUT2=1
 
 setopt HIST_IGNORE_SPACE
