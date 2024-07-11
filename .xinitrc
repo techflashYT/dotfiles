@@ -35,6 +35,6 @@ picom --no-fading-openclose -i 1 --vsync --fade-out-step 1 --fade-in-step 1 &
 # shellcheck disable=SC2016,SC2088
 ntfy subscribe techflash_messages_aaabbbeeefff '~/bin/ntfy-notif "$t" "$m"' &
 
-discord &
+armcord &
 firefox &
 exec i3
