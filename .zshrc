@@ -5,7 +5,7 @@ export LESSHISTFILE="-"
 source /etc/profile.d/devkit-env.sh
 export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:$HOME/bin/:$HOME/bin/cross-arm/arm-unknown-linux-gnueabi/bin:$HOME/bin/cross-ppc/powerpc-unknown-linux-gnu/bin:$HOME/.local/bin"
 export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
-export GTK_THEME=Arc-Dark:dark
+export GTK_THEME=Adwaita-dark:dark
 export GTK_ICON_THEME=Papirus-Dark
 export MOZ_USE_XINPUT2=1
 
