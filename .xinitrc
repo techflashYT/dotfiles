@@ -13,8 +13,9 @@ feh /usr/share/backgrounds/nixlabs.png --bg-scale --no-fehbg &
 picom --no-fading-openclose -i 1 --vsync --fade-out-step 1 --fade-in-step 1 &
 
 # shellcheck disable=SC2016,SC2088
-ntfy subscribe techflash_messages_aaabbbeeefff '~/bin/ntfy-notif "$t" "$m"' &
+startAfterNet ntfy subscribe techflash_messages_aaabbbeeefff '~/bin/ntfy-notif "$t" "$m"' &
 
+nm-applet &
 firefox &
-startAfterNet "armcord" &
+startAfterNet "vesktop" &
 exec i3
