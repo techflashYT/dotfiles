@@ -104,8 +104,8 @@ bindsym $mod+Shift+0 exec --no-startup-id ~/bin/ws_move 10
 assign [class="firefox-nightly"] "1"
 assign [class="firefox"] "1"
 assign [class="discord"] "2"
-assign [class="armcord"] "2"
-assign [class="ArmCord"] "2"
+assign [class="vesktop"] "2"
+assign [class="Vesktop"] "2"
 assign [window_role="music_terminal"] "8"
 
 # reload the configuration file
