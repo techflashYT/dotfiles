@@ -10,9 +10,9 @@ installPkgs=true
 
 asRoot() {
 	if command -v sudo &> /dev/null; then
-		sudo $1
+		sudo $@
 	else
-		su -c "$1"
+		su -c "$@"
 	fi
 }
 
@@ -111,15 +111,21 @@ installPkgs() {
 
 	yay -Sy
 	echo "Done, installing packages"
-	yay -S --needed i3-wm i3status rofi \
+	yay -S --needed i3-wm rofi \
 		gnome-terminal-transparency ttf-dejavu-nerd ttf-fira-code \
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
 		notification-daemon polkit-gnome picom feh \
-		arc-gtk-theme
+		arc-gtk-theme gtk-themes-extra
 
+	cd ~/src
+	git clone https://github.com/techflashYT/i3status-mod
+	cd i3status-mod
+	meson setup build --prefix=/usr
+	cd build
+	ninja -j$(nproc)
+	asRoot ninja install
 }
 
 installPkgs
 echo "Done!  Enjoy!"
-
