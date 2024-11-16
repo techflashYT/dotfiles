@@ -115,8 +115,10 @@ installPkgs() {
 		gnome-terminal-transparency ttf-dejavu-nerd ttf-fira-code \
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
-		notification-daemon polkit-gnome picom feh \
-		arc-gtk-theme gtk-themes-extra
+		notification-daemon polkit-gnome picom feh less \
+		arc-gtk-theme gnome-themes-extra arc-icon-theme breeze-icons papirus-icon-theme \
+		confuse \
+		zoxide
 
 	cd ~/src
 	git clone https://github.com/techflashYT/i3status-mod
