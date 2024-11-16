@@ -118,7 +118,7 @@ installPkgs() {
 		notification-daemon polkit-gnome picom feh less \
 		arc-gtk-theme gnome-themes-extra arc-icon-theme breeze-icons papirus-icon-theme \
 		confuse \
-		zoxide
+		zoxide github-cli
 
 	cd ~/src
 	git clone https://github.com/techflashYT/i3status-mod
