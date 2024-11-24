@@ -130,4 +130,9 @@ installPkgs() {
 }
 
 installPkgs
+
+echo "Disabling services..."
+systemctl --user disable --now at-spi-dbus-bus
+systemctl --user mask at-spi-dbus-bus
+
 echo "Done!  Enjoy!"
