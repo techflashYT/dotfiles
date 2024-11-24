@@ -125,3 +125,4 @@ bar {
 for_window [class="gnome-calculator" instance="gnome-calculator"] floating enable
 for_window [class="gnome-screenshot"] floating enable
 for_window [class="Gnome-screenshot"] floating enable
+for_window [class="net-sourceforge-jnlp-runtime-Boot"] floating enable
