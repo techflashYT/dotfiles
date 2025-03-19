@@ -42,7 +42,7 @@ URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select,clipboard
 URxvt*depth: 32
 URxvt.background: [90]#2E3440
 URxvt.intensityStyles: false
-!!URxvt.font: xft:Fira Code:size=12
+URxvt.font: xft:Fira Code:size=12
 URxvt.scrollBar: false
 URxvt.cursorColor: magenta
 
