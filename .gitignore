@@ -3,3 +3,4 @@ yay
 # ignore the damn filepicker that updates every 5s
 gtkfilechooser.ini
 .config/gtk-2.0/gtkfilechooser.ini
+.config/gtk-3.0/bookmarks
