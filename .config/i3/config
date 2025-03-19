@@ -49,8 +49,8 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 # set first and second monitor variables
-set $fm HDMI-A-0
-set $sm DisplayPort-2
+set $fm HDMI-0
+set $sm DP-3
 
 workspace 1  output $fm
 workspace 2  output $fm
@@ -118,7 +118,7 @@ bindsym $mod+Mod1+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command /home/techflash/.config/i3status/net-wrapper.sh
 }
 
 # specific windows to start in floating mode by default
