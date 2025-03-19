@@ -112,7 +112,7 @@ installPkgs() {
 	yay -Sy
 	echo "Done, installing packages"
 	yay -S --needed i3-wm rofi \
-		gnome-terminal-transparency ttf-dejavu-nerd ttf-fira-code \
+		ttf-dejavu-nerd ttf-firacode-nerd \
 		zsh spaceship-prompt zsh-syntax-highlighting zsh-autosuggestions \
 		xorg-server xorg-xinit libxcomposite \
 		notification-daemon polkit-gnome picom feh less \
