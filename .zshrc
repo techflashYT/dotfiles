@@ -1,14 +1,10 @@
-# set env vars that are necessary to have in Xorg
-export GTK_THEME=Adwaita-dark:dark
-export GTK_ICON_THEME=Papirus-Dark
-export MOZ_USE_XINPUT2=1
+# other env vars
+export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:/opt/devkitpro/portlibs/ppc/bin/:$HOME/bin/:$HOME/bin/cross-arm/arm-unknown-linux-gnueabi/bin:$HOME/bin/cross-ppc/powerpc-unknown-linux-gnu/bin:$HOME/.local/bin"
 
 if [ $(tty) = "/dev/tty1" ]; then
 	exec startx
 fi
 
-# other env vars
-export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:/opt/devkitpro/portlibs/ppc/bin/:$HOME/bin/:$HOME/bin/cross-arm/arm-unknown-linux-gnueabi/bin:$HOME/bin/cross-ppc/powerpc-unknown-linux-gnu/bin:$HOME/.local/bin"
 export LESSHISTFILE="-"
 
 # devkitpro env
@@ -64,15 +60,30 @@ bindkey "^[[3;5~" delete-word
 
 
 TERM_PROC=$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))
-if [[ $TERM_PROC == *cool-retro-term* ]]; then
-	export TF_TERM_DISCOVERY="cool-retro-term"
-	bindkey "^?"      backward-delete-word
-	bindkey "^H"      backward-delete-char
-elif [[ $TERM_PROC  == *gnome* ]]; then
-	export TF_TERM_DISCOVERY="gnome-terminal"
+bckspc1() {
 	bindkey "^H"      backward-delete-word
 	bindkey "^?"      backward-delete-char
+}
+
+bckspc2() {
+	bindkey "^?"      backward-delete-word
+	bindkey "^H"      backward-delete-char
+}
+if [[ $TERM_PROC == *cool-retro-term* ]]; then
+	export TF_TERM_DISCOVERY="cool-retro-term"
+	bckspc2
+elif [[ $TERM_PROC  == *gnome* ]]; then
+	export TF_TERM_DISCOVERY="gnome-terminal"
+	bckspc1
+elif [[ $TERM_PROC == *konsole* ]]; then
+	export TF_TERM_DISCOVERY="konsole"
+	bckspc1
+elif [[ $TERM_PROC == *rxvt* ]]; then
+	bckspc1
+else
+	bckspc1
 fi
+
 
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
