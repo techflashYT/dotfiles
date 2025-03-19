@@ -57,6 +57,7 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[5;5~" beep
 bindkey "^[[6;5~" beep
 bindkey "^[[3;5~" delete-word
+bindkey "^[[3^" delete-word
 
 
 TERM_PROC=$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))
