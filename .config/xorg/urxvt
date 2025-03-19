@@ -1,10 +1,9 @@
 URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select,clipboard
 
-#URxvt.background: #000000
 URxvt*depth: 32
 URxvt.background: [90]#2E3440
 URxvt.intensityStyles: false
-URxvt.font: xft:monospace:size=12
+URxvt.font: xft:FiraCode Nerd Font:size=12
 URxvt.scrollBar: false
 URxvt.cursorColor: magenta
 
@@ -222,4 +221,3 @@ URxvt.iso14755_52: false
 *URxvt*keysym.S-M-C-Down:	\033[1;8B
 *URxvt*keysym.S-M-C-Right:	\033[1;8C
 *URxvt*keysym.S-M-C-Left:	\033[1;8D
-
