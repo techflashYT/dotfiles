@@ -63,8 +63,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 install .config/nvim
 nvim +PlugUpdate '+qa!'
 
-dconf load /org/gnome/terminal/ < gnome_terminal_settings.txt
-
 echo -n "Installing: \"firefoxUser.js\"... "
 dir=$PWD
 cd ~/.mozilla/firefox/*default-release/
