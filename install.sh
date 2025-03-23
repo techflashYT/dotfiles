@@ -115,7 +115,7 @@ installPkgs() {
 		xorg-server xorg-xinit libxcomposite \
 		notification-daemon polkit-gnome picom feh less \
 		arc-gtk-theme gnome-themes-extra arc-icon-theme breeze-icons papirus-icon-theme \
-		confuse \
+		confuse dash \
 		zoxide github-cli
 
 	cd ~/src
@@ -132,5 +132,19 @@ installPkgs
 echo "Disabling services..."
 systemctl --user disable --now at-spi-dbus-bus
 systemctl --user mask at-spi-dbus-bus
+asRoot systemctl disable --now systemd-userdbd.socket
+asRoot systemctl mask systemd-userdbd systemd-userdbd.socket
+
+# replace /bin/sh with dash
+ln -sf dash /bin/sh
+
+echo "setting up /etc/environment"
+
+cat << EOF | asRoot tee -a /etc/environment
+GTK_THEME=Adwaita-dark:dark
+GTK_ICON_THEME=Papirus-Dark
+MOZ_USE_XINPUT2=1
+GTK_ALLY=none
+EOF
 
 echo "Done!  Enjoy!"
