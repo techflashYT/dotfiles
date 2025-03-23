@@ -27,7 +27,7 @@ URxvt.iso14755_52: false
 
 
 ! Nasty hack to act more like XTerm
-*URxvt*termName:		xterm-256color
+! *URxvt*termName:		xterm-256color
 
 ! Normal
 *URxvt*keysym.Home:		\033OH
