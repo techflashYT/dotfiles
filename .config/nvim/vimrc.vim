@@ -18,12 +18,16 @@ let g:onedark_config = {
 if !empty($TF_TERM_DISCOVERY)
 	if $TF_TERM_DISCOVERY ==# 'gnome-terminal'
 		colorscheme onedark
-	elseif $TERM ==# 'cool-retro-term'
+	elseif $TF_TERM_DISCOVERY ==# 'rxvt-unicode-256color'
+		colorscheme onedark
+	elseif $TF_TERM_DISCOVERY ==# 'cool-retro-term'
 		" Nothing, stock color scheme is better here.
 	endif
 else
 	" Fall back to $TERM based discovery
 	if $TERM ==# 'xterm-256color'   " Probably gnome-terminal
+		colorscheme onedark
+	elseif $TERM ==# 'rxvt-unicode-256color'
 		colorscheme onedark
 	elseif $TERM ==# 'xterm'        " Probably cool-retro-term, or something basic
 		" Do nothing for now
