@@ -119,3 +119,13 @@ update_terminal_height
 
 eval "$(zoxide init zsh)"
 alias cd=z
+transfer() {
+sudo bash <<EOF
+    set -eo pipefail
+    source_size="\$(blockdev --getsize64 "$1" 2>/dev/null || stat --printf="%s" "$1")"
+      dd if="$1" ibs=1M status=none \
+    | pv -s "\$source_size" 2>"$(tty)" \
+    | dd of="$2" obs=1M oflag=direct status=none
+EOF
+}
+
