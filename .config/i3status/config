@@ -12,7 +12,7 @@ general {
         interval = 5
 }
 
-order += "ipv6"
+# order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "disk /"
@@ -21,7 +21,6 @@ order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
 order += "battery 0"
-order += "battery 1"
 order += "tztime local"
 
 wireless _first_ {
@@ -48,7 +47,7 @@ battery 0 {
 	status_full = " "
 	status_empty = " "
 
-	integer_battery_capacity = true
+	integer_battery_capacity = false
 	last_full_capacity = true
 	override_idle = true
 
@@ -57,23 +56,6 @@ battery 0 {
 	hide_seconds = true
 
         format = "BAT0 %status %percentage | %remaining remaining | %consumption"
-	format_down = ""
-}
-battery 1 {
-	status_bat = " "
-	status_chr = "⚡"
-	status_full = " "
-	status_empty = " "
-
-	integer_battery_capacity = true
-	threshold_type = percent
-	last_full_capacity = true
-	override_idle = true
-
-	low_threshold = 20
-	hide_seconds = true
-
-        format = "BAT1 %status %percentage"
 	format_down = ""
 }
 
