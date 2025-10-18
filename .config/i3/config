@@ -36,8 +36,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+w kill
 
 # backlight controls on my laptop
-bindcode 232 exec ~/bin/backlight down
-bindcode 233 exec ~/bin/backlight up
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # mod+space to start the rofi program launcher
 bindsym $mod+space exec "rofi -modi drun,run -show drun"
