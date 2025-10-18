@@ -15,6 +15,8 @@ picom --backend glx --no-fading-openclose -i 1 --vsync --fade-out-step 1 --fade-
 # shellcheck disable=SC2016,SC2088
 startAfterNet ntfy subscribe techflash_messages_aaabbbeeefff '~/bin/ntfy-notif "$t" "$m"' &
 
+xfce4-clipman &
+
 nm-applet &
 firefox &
 startAfterNet "vesktop" &
