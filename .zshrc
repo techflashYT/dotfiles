@@ -2,7 +2,7 @@
 export PATH="$PATH:/opt/devkitpro/devkitPPC/bin:/opt/devkitpro/portlibs/ppc/bin/:$HOME/bin/:$HOME/bin/cross-arm/arm-unknown-linux-gnueabi/bin:$HOME/bin/cross-ppc/powerpc-unknown-linux-gnu/bin:$HOME/.local/bin"
 
 if [ $(tty) = "/dev/tty1" ]; then
-	exec startx
+	exec startx &> ~/.xsession-errors
 fi
 
 export LESSHISTFILE="-"
