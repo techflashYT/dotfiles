@@ -22,10 +22,3 @@ languages = vim.tbl_extend('force', languages, {
 		require('efmls-configs.linters.shellcheck')
 	},
 })
-require "lspconfig".efm.setup({
-	init_options = {documentFormatting = true},
-	settings = {
-		rootMarkers = {".git/"},
-		languages = languages
-	}
-})
