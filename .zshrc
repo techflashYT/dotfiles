@@ -60,6 +60,7 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[b"     backward-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[f"     forward-word
+bindkey "^F"     forward-char
 bindkey "^[[5;5~" beep
 bindkey "^[[6;5~" beep
 bindkey "^[[3;5~" delete-word
