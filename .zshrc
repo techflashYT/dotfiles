@@ -45,19 +45,26 @@ bindkey -e
 
 
 # Configure characters so that it handles them correctly
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+bindkey "^A"      beginning-of-line
 bindkey "^[[H"    beginning-of-line
 bindkey "^[[1~"   beginning-of-line
 bindkey "^[[7~"   beginning-of-line
+bindkey "^E"      end-of-line
 bindkey "^[[F"    end-of-line
 bindkey "^[[4~"   end-of-line
 bindkey "^[[8~"   end-of-line
 bindkey "^[[3~"   delete-char
 bindkey "^[[1;5D" backward-word
+bindkey "^[b"     backward-word
 bindkey "^[[1;5C" forward-word
+bindkey "^[f"     forward-word
 bindkey "^[[5;5~" beep
 bindkey "^[[6;5~" beep
 bindkey "^[[3;5~" delete-word
 bindkey "^[[3^" delete-word
+
 
 
 TERM_PROC=$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))
